@@ -10,7 +10,6 @@ app.geometry("400x600")
 app.title("ConnectDrive")
 app.resizable(False, False)
 
-ip = "---"
 jsonreader = "Text didn't change"
 filepath = "/CDIP.lock"
 y_padding = 6
@@ -38,7 +37,7 @@ label_jsonreader.pack(pady=y_padding, padx=10)
 label_ip = ctk.CTkLabel(master=frame_jsonbutforip, text="IP of device", bg="white")
 label_ip.pack(pady=y_padding, padx=10)
 
-label_ip1 = ctk.CTkLabel(master=frame_jsonbutforip, text=ip, bg="white")
+label_ip1 = ctk.CTkLabel(master=frame_jsonbutforip, text="-----", bg="white")
 label_ip1.pack(pady=y_padding, padx=10)
 # End of reporting IP
 
@@ -73,6 +72,7 @@ def DeviceFinder():
                 for connect in data["connect"]:
                     print(connect["ip"])
                     print(connect["type"])
+                    label_ip1.configure(text = connect['ip'])
                     auco = cb_autoconnect.get()
                     if auco == False:
                         label_jsonreader.configure(text = "Auto-Connect disabled | JSON file Found!")
@@ -115,8 +115,8 @@ def Info():
     tkinter.Label(master=tk, text="so this program might change").pack(pady=y_padding, padx=10)
     tkinter.Label(master=tk, text="i have alot of ideas for this").pack(pady=y_padding, padx=10)
     tkinter.Label(master=tk, text="").pack(pady=y_padding, padx=10)
-    tkinter.Label(master=tk, text="Version: 1.0 Beta release - A MBD Project").pack(pady=y_padding, padx=10)
-    tkinter.Label(master=tk, text="Boring info: Compile date: 30-July-2024 | First public release").pack(pady=y_padding, padx=10)
+    tkinter.Label(master=tk, text="Version: 1.1 release - A MBD Project").pack(pady=y_padding, padx=10)
+    tkinter.Label(master=tk, text="Boring info: Compile date: 9-August-2024 | Second public release").pack(pady=y_padding, padx=10)
 
 def CreateFile():  
     tk = ctk.CTkToplevel()
