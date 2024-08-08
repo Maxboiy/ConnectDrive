@@ -12,6 +12,10 @@ Windows
 I would not recommend using this program for IP publicly available
 instead use IP local to your own network
 
+# Terminal version | How does it work?
+Drag the app into the terminal or go into its directory 
+type "CD_cmd -h" this should open up a help menu
+
 # How to use it
 Once the program is open you press the 'Create File'
 you enter the prompts given and then the program will create a JSON file on the flash drive you chose
